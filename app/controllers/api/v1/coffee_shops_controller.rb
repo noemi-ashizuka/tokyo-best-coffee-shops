@@ -1,6 +1,6 @@
 class Api::V1::CoffeeShopsController < Api::V1::BaseController
   acts_as_token_authentication_handler_for User, except: [ :index, :show ]
-  before_action :set_coffee_shop, only: [:show, :update]
+  before_action :set_coffee_shop, only: [:show, :update, :destroy]
 
   def index
     @coffee_shops = policy_scope(CoffeeShop)
@@ -15,6 +15,22 @@ class Api::V1::CoffeeShopsController < Api::V1::BaseController
     else
       render_error
     end
+  end
+
+  def create
+    @coffee_shop = CoffeeShop.new(coffee_shop_params)
+    @coffee_shop.user = current_user
+    authorize @coffee_shop
+    if @coffee_shop.save
+      render :show, status: :created
+    else
+      render_error
+    end
+  end
+
+  def destroy
+    @coffee_shop.destroy
+    head :no_content
   end
 
   private
