@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       resources :coffee_shops, only: [ :index, :show, :update, :create, :destroy ]
     end
   end
+
+  resources :coffee_shops, only: [:index]
 end
