@@ -32,6 +32,7 @@ gem 'devise'
 
 # Manually added gems
 gem 'pundit'
+gem 'simple_token_authentication'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
