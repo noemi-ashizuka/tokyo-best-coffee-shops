@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :coffee_shops, only: [:index, :show]
+  resources :coffee_shops, only: [:index, :show, :new, :create]
 end
