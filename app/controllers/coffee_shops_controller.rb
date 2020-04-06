@@ -1,5 +1,5 @@
 class CoffeeShopsController < ApplicationController
-  before_action :set_coffee_shop, only: [:show, :edit, :update]
+  before_action :set_coffee_shop, only: [:show, :edit, :update, :destroy]
   def index
     @coffee_shops = policy_scope(CoffeeShop)
   end
@@ -32,6 +32,11 @@ class CoffeeShopsController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @coffee_shop.destroy
+    redirect_to coffee_shops_path
   end
 
   private
