@@ -1,0 +1,39 @@
+.button-thin {
+  background-color: $accent-red;
+  color: white;
+  padding: 8px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    background-color: $highlight-red;
+  }
+}
+
+.button-red {
+  background-color: $accent-red;
+  color: white;
+  padding: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+
+  &:hover {
+    color: white;
+    background-color: $highlight-red;
+  }
+}
+
+.halo-circle {
+  border-radius: 50%;
+  padding: 8px;
+  font-size: 32px;
+  
+  &:hover {
+    background-color: $highlight-red;
+    opacity: 0.5;
+    color: white;
+  }
+}

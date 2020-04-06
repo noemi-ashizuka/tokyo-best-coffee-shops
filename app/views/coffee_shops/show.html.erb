@@ -13,8 +13,8 @@
   <p><%= review.content %></p>
 <% end %>
 
-<%= link_to 'Delete', coffee_shop_path, method: :delete, class: "btn btn-danger" %>
-<%= link_to 'Edit', edit_coffee_shop_path, class: "btn btn-warning" %>
-<h3><%= link_to coffee_shops_path do %>
+<%= link_to 'Delete', coffee_shop_path, method: :delete, class: "button-red" %>
+<%= link_to 'Edit', edit_coffee_shop_path, class: "button-red" %>
+<%= link_to coffee_shops_path, class:"halo-circle" do %>
   <i class="fas fa-arrow-left"></i>
-<% end %></h3>
+<% end %>
