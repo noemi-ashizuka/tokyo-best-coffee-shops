@@ -1,5 +1,6 @@
 <%= simple_form_for(@coffee_shop) do |f| %>
   <%= f.input :name %>
   <%= f.input :address %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Save", class: "btn btn-info" %>
 <% end %>
