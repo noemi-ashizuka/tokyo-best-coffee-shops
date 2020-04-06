@@ -41,7 +41,7 @@ class Api::V1::CoffeeShopsController < Api::V1::BaseController
   end
 
   def coffee_shop_params
-    params.require(:coffee_shop).permit(:name, :address)
+    params.require(:coffee_shop).permit(:name, :address, :photo)
   end
 
   def render_error
