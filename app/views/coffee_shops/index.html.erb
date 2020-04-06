@@ -1,4 +1,5 @@
 <% @coffee_shops.each do |shop| %>
-  <%= shop.name %>
-  <%= shop.address %>
+  <%= link_to coffee_shop_path(shop) do %>
+    <h3><%= shop.name %></h3>
+  <% end %>
 <% end %>
