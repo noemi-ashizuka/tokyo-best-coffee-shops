@@ -1,3 +1,33 @@
 .display-card {
-  
+  background-color: $pale-pink;
+  padding: 24px;
+  display: flex;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.card-column-left {
+  display: block;
+  margin-right: 24px;
+}
+
+.card-column-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .card-buttons {
+    align-self: flex-end;
+    margin-bottom: 7px;
+  }
+}
+
+.card-title {
+  border-bottom: 2px solid $accent-red;
+
+  h1 {
+    font-size: 48px;
+    letter-spacing: 0.1rem;
+    opacity: 0.8;
+  }
 }
