@@ -16,8 +16,13 @@
   flex-direction: column;
   justify-content: space-between;
 
+  .card-description-panel {
+    flex-grow: 5;
+    margin-top: 24px;
+  }
+
   .card-buttons {
-    align-self: flex-end;
+    align-self: flex-start;
     margin-bottom: 7px;
   }
 }

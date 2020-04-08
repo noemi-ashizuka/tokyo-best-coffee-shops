@@ -13,12 +13,13 @@
   <div class="card-column-right">
     <p><%= @coffee_shop.address %></p>
 
+    <div class="card-description-panel">
+      <p><%= @coffee_shop.description %></p>
+    </div>
+
     <div class="card-buttons">
       <%= link_to 'Delete', coffee_shop_path, method: :delete, class: "button-red", style:"text-decoration:none" %>
       <%= link_to 'Edit', edit_coffee_shop_path, class: "button-red", style:"text-decoration:none" %>
-      <%= link_to coffee_shops_path, class:"halo-circle" do %>
-        <i class="fas fa-arrow-left"></i>
-      <% end %>
     </div>
   </div>
 </div>
@@ -29,6 +30,10 @@
     <p><%= review.content %></p>
   <% end %>
 </div>
+
+<%= link_to coffee_shops_path, class:"halo-circle" do %>
+  <i class="fas fa-arrow-left"></i>
+<% end %>
 
 
 
