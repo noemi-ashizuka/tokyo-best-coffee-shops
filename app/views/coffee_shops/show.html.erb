@@ -3,7 +3,6 @@
     <div class="card-title">
       <h1><%=@coffee_shop.name %></h1>
     </div>
-
     <% if @coffee_shop.photo.attached? %>
       <%= cl_image_tag @coffee_shop.photo.key, width: 600, height: 400 %>
     <% else %>
