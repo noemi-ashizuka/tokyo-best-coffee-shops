@@ -34,6 +34,7 @@ gem 'devise'
 gem 'pundit'
 gem 'simple_token_authentication'
 gem 'cloudinary', '~> 1.12.0'
+gem 'geocoder'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
