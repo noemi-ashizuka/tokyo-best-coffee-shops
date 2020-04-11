@@ -9,5 +9,7 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :coffee_shops
+  resources :coffee_shops do
+    resources :reviews, only: [:index, :new, :create, :destroy]
+  end
 end
