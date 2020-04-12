@@ -1,7 +1,15 @@
 class CoffeeShopsController < ApplicationController
   before_action :set_coffee_shop, only: [:show, :edit, :update, :destroy]
   def index
-    @coffee_shops = policy_scope(CoffeeShop)
+    @coffee_shops = policy_scope(CoffeeShop.geocoded)
+
+    @markers = @coffee_shops.map do |shop|
+      {
+        lat: shop.latitude,
+        lng: shop.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { shop: shop })
+      }
+    end
   end
 
   def show
