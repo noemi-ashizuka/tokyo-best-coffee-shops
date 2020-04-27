@@ -1,5 +1,8 @@
-<%= simple_form_for [@coffee_shop, @review] do |f| %>
-  <%= f.input :rating, collection: 1..5  %>
-  <%= f.input :content, as: :text %>
-  <%= f.button :submit %>
-<% end %>
+<div class="form-center">
+  <h2>Write a review</h2>
+  <%= simple_form_for [@coffee_shop, @review] do |f| %>
+    <%= f.input :rating, collection: 1..5, class:"input-line", label: "Rate this coffee shop" %>
+    <%= f.input :content, as: :text, class:"input-line" %>
+    <%= f.button :submit, class: "btn button-red" %>
+  <% end %>
+</div>

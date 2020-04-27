@@ -23,15 +23,13 @@
   </div>
 </div>
 
-<div>
-  <h2> Reviews </h2>
+<h2> Reviews </h2>
+<div class="review-container">
   <% @coffee_shop.reviews.each do |review| %>
-    <p><%= review.rating %></p>
-    <p><%= review.content %></p>
+    <%= render './reviews/review_card', review: review %>
   <% end %>
 </div>
 <div>
-  <h2>Write a review</h2>
   <%= render './reviews/review_form', review: @review %>
 </div>
 

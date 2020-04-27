@@ -19,6 +19,7 @@ class ReviewsController < ApplicationController
     if @review.save
       redirect_to coffee_shop_path(@coffee_shop)
     else
+      flash[:alert] = "Something went wrong when creating the review. Please try again."
       render :new
     end
   end
