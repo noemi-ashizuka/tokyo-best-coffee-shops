@@ -1,0 +1,24 @@
+.form-center {
+  margin-top: 32px;
+  .input-line {
+    width: 100%;
+    
+  }
+
+  label {
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 100;
+  }
+}
+
+@media (min-width: 640px) {
+  .form-center {
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 32px;
+    .input-line {
+      width: 50%;
+    }
+  }
+}
