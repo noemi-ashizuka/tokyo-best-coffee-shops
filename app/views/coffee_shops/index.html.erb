@@ -2,7 +2,7 @@
   <div class="index-list">
     <% @coffee_shops.each do |shop| %>
       <%= link_to coffee_shop_path(shop), style: "text-decoration: none;" do %>
-        <h3><%= shop.name %></h3>
+        <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>
       <% end %>
     <% end %>
   

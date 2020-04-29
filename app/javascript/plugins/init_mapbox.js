@@ -14,10 +14,14 @@ const initMapbox = () => {
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
 
-      new mapboxgl.Marker()
+      const newMarker = new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(map);
+      
+        newMarker.getElement().dataset.markerId = marker.id;
+        newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighligh(e));
+        newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighligh(e));
     });
 
     const fitMapToMarkers = (map, markers) => {
@@ -29,5 +33,10 @@ const initMapbox = () => {
     fitMapToMarkers(map, markers);
   }
 };
+
+const toggleCardHighligh = (event) => {
+  const shopName = document.querySelector(`[data-shop-id="${event.currentTarget.dataset.markerId}"]`);
+  shopName.classList.toggle('highlight');
+}
 
 export { initMapbox };
