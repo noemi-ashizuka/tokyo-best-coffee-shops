@@ -1,10 +1,21 @@
 <div class="index-content">
   <div class="index-list">
+    <h2>All the Coffee Shops</h2>
     <% @coffee_shops.each do |shop| %>
       <%= link_to coffee_shop_path(shop), style: "text-decoration: none;" do %>
         <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>
       <% end %>
     <% end %>
+    
+    <h2>Your Coffee Shops</h2>
+    <% current_user.my_shops.each do |shop| %>
+      <%= link_to coffee_shop_path(shop), style: "text-decoration: none;" do %>
+        <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>
+      <% end %>
+    <% end %>
+    
+
+
   
     <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
   </div>
