@@ -15,7 +15,7 @@
     <div class="card-description-panel">
       <p><%= @coffee_shop.description %></p>
     </div>
-  <% if @coffee_shop.user == current_user%>
+  <% if @coffee_shop.user == current_user %>
     <div class="card-buttons">
       <%= link_to 'Delete', coffee_shop_path, method: :delete, class: "button-red", style:"text-decoration:none" %>
       <%= link_to 'Edit', edit_coffee_shop_path, class: "button-red", style:"text-decoration:none" %>
