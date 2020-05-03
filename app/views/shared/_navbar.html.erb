@@ -2,6 +2,11 @@
   <%= link_to coffee_shops_path, class: "navbar-brand logo-color" do %>
     <h1><i class="fas fa-coffee"></i></h1>
   <% end %>
+  <ul class="navbar-nav mr-auto">
+    <li class="nav-item">
+      <%= link_to "API", api_info_path, class: "nav-link" %>
+    </li>
+  </ul>
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
