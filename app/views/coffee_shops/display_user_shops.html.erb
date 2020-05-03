@@ -1,0 +1,12 @@
+<% if @user_shops.empty? %>
+  <h3>You have no saved coffee shops. Start by creating a coffee shop: </h3>
+  <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
+<% else %>
+  <div class="card-container">
+    <% @user_shops.each do |shop| %>
+      <div class="shop-card">
+        <h3><%= shop.name %></h3>
+      </div>
+    <% end %>
+  </div>
+<% end %>

@@ -28,4 +28,8 @@ class CoffeeShopPolicy < ApplicationPolicy
   def destroy?
     update?
   end
+
+  def display_user_shops?
+    true
+  end
 end

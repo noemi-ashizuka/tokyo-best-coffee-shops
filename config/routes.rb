@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     end
   end
 
+  get '/coffee_shops/my_shops', to: 'coffee_shops#display_user_shops', as: 'user_shops'
+
   resources :coffee_shops do
     resources :reviews, only: [:index, :new, :create, :destroy]
   end

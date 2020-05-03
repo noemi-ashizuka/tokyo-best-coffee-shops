@@ -49,6 +49,11 @@ class CoffeeShopsController < ApplicationController
     redirect_to coffee_shops_path
   end
 
+  def display_user_shops
+    @user_shops = current_user.my_shops
+    authorize @user_shops
+  end
+
   private
 
   def set_coffee_shop
