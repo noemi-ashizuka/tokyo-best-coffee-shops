@@ -1,0 +1,26 @@
+.content-center {
+
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+
+}
+
+.shop-card-small {
+  height: 200px;
+  width: 250px;
+  margin: 4px;
+
+  h3 {
+    color: white;
+    text-shadow: 0 1px rgba(52, 52, 52, 0.5);
+    padding: 24px;
+  }
+
+  img {
+    height: 100%;
+
+  }
+}
