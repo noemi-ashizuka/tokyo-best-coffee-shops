@@ -1,4 +1,11 @@
 <div class="review-display">
-  <p class="star-rating"><%= review.rating %></p>
+  <p class="star-rating">
+    <% review.rating.times do %>
+      <i class="fas fa-star"></i>
+    <% end %>
+    <% (5 - review.rating).times do %>
+      <i class="far fa-star"></i>
+    <% end %>
+  </p>
   <p class="review-content"><%= review.content %></p>
 </div>

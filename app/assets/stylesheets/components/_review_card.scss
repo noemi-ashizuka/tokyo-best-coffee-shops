@@ -11,7 +11,10 @@
   margin: 8px;
 
   .star-rating {
+    color: $accent-red;
+    padding-bottom: 4px;
     border-bottom: 1px solid $accent-red;
+    
   }
   
   .review-content {

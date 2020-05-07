@@ -6,8 +6,10 @@
 <% else %>
   <div class="card-container">
     <% @user_shops.each do |shop| %>
-      <div class="shop-card-small" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(106, 13, 13, 0.23)), url(<%= cl_image_path shop.photo.key, width: 250, height: 200, crop: :fill %>);">
-      <h3><%= shop.name %></h3>
+      <%= link_to coffee_shop_path(shop), style: "text-decoration: none" do %>
+        <div class="shop-card-small" style="background-image:linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(106, 13, 13, 0.23)), url(<%= cl_image_path shop.photo.key, width: 250, height: 200, crop: :fill %>);">
+        <h3><%= shop.name %></h3>
+      <% end %>
       </div>
     <% end %>
   </div>
