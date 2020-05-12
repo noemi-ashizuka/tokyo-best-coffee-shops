@@ -1,0 +1,15 @@
+.instructions {
+  background-color: $pale-pink;
+  padding: 16px;
+  margin-top: 8px;
+
+  p {
+    font-size: 18px;
+  }
+
+  .box {
+    background-color: white;
+    padding: 8px;
+    border: 1px solid $accent-red;
+  }
+}
