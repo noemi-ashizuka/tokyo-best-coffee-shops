@@ -4,6 +4,9 @@ class Api::V1::CoffeeShopsController < Api::V1::BaseController
 
   def index
     @coffee_shops = policy_scope(CoffeeShop)
+    if params[:query].present?
+      @coffee_shops = CoffeeShop.search_by_name_address_and_description(params[:query])
+    end
   end
 
   def show
