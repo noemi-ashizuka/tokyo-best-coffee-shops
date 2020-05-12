@@ -1,0 +1,7 @@
+<%= form_tag coffee_shops_path, method: :get do %>
+  <%= text_field_tag :query,
+      params[:query],
+      placeholder: "Search coffee shops"
+  %>
+  <%= button_tag :submit %>
+<% end %>

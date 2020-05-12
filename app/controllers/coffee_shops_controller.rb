@@ -11,7 +11,13 @@ class CoffeeShopsController < ApplicationController
         id: shop.id
       }
     end
+
+    if params[:query].present?
+      @coffee_shops = CoffeeShop.search_by_name_address_and_description(params[:query])
+    end
   end
+
+ 
 
   def show
     @review = Review.new

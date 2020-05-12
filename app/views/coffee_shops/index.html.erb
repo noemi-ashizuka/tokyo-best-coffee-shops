@@ -1,15 +1,18 @@
 <div class="index-content">
   <div class="index-list">
-    <h2>All the Coffee Shops</h2>
-    <% @coffee_shops.each do |shop| %>
-      <%= link_to coffee_shop_path(shop), style: "text-decoration: none" do %>
-        <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>
+    <div>
+      <%= render 'searchbar'%>
+      <% if @coffee_shops.any? %>
+        <% @coffee_shops.each do |shop| %>
+          <%= link_to coffee_shop_path(shop), style: "text-decoration: none" do %>
+          <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>
+          <% end %>
+        <% end %>
+      <% else %>
+        <p>No results</p>
       <% end %>
-    <% end %>
-
-
-
-    <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
+    </div>
+  <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
 
   </div>
   <div id="map"

@@ -8,4 +8,11 @@ class CoffeeShop < ApplicationRecord
   before_validation :geocode, on: %i[create update]
 
   validates :name, :address, presence: true
+
+  include PgSearch::Model 
+  pg_search_scope :search_by_name_address_and_description,
+    against: [ :name, :address, :description ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end

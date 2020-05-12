@@ -35,6 +35,7 @@ gem 'pundit'
 gem 'simple_token_authentication'
 gem 'cloudinary', '~> 1.12.0'
 gem 'geocoder'
+gem 'pg_search', '~> 2.3.0'
 
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
