@@ -1,7 +1,9 @@
 <div class="index-content">
-  <div class="index-list">
-    <div>
+  <div class="left-list">
+    <div class="search-bar">
       <%= render 'searchbar'%>
+    </div>
+    <div class="index-list">
       <% if @coffee_shops.any? %>
         <% @coffee_shops.each do |shop| %>
           <%= link_to coffee_shop_path(shop), style: "text-decoration: none" do %>
@@ -12,13 +14,13 @@
         <p>No results</p>
       <% end %>
     </div>
-  <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
+  </div>
+  
+  
+    <div  id="map"
+          style="width: 100%; height: 600px;"
+          data-markers="<%= @markers.to_json %>"
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
-  </div>
-  <div id="map"
-        class= "map"
-        style="width: 100%; height: 600px;"
-        data-markers="<%= @markers.to_json %>"
-        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
 </div>
