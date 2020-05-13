@@ -13,4 +13,10 @@
       </div>
     <% end %>
   </div>
+  <div class="button-list">
+    <%= link_to coffee_shops_path, class:"halo-circle round-button", style:"text-decoration:none" do %>
+      <i class="fas fa-arrow-left"></i>
+    <% end %>
+    <%= link_to "Add a new Coffee Shop", new_coffee_shop_path, class: "button-thin", style: "text-decoration: none;" %>
+  </div>
 <% end %>
