@@ -1,5 +1,7 @@
 class CoffeeShopsController < ApplicationController
   before_action :set_coffee_shop, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:index, :show]
+  
   def index
     @coffee_shops = policy_scope(CoffeeShop.geocoded)
 
