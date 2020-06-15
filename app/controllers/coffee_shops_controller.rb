@@ -19,8 +19,6 @@ class CoffeeShopsController < ApplicationController
     end
   end
 
- 
-
   def show
     @review = Review.new
   end
