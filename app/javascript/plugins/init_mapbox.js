@@ -23,11 +23,11 @@ const initMapbox = () => {
         newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighligh(e));
         newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighligh(e));
     });
-
+    // padding: 70, maxZoom: 15
     const fitMapToMarkers = (map, markers) => {
       const bounds = new mapboxgl.LngLatBounds();
       markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-      map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
+      map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 3000 });
     };
 
     fitMapToMarkers(map, markers);
