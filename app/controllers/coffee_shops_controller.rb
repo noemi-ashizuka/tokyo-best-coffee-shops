@@ -16,6 +16,15 @@ class CoffeeShopsController < ApplicationController
 
     if params[:query].present?
       @coffee_shops = CoffeeShop.search_by_name_address_and_description(params[:query])
+
+      @markers = @coffee_shops.map do |shop|
+        {
+          lat: shop.latitude,
+          lng: shop.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { shop: shop }),
+          id: shop.id
+        }
+      end
     end
   end
 
