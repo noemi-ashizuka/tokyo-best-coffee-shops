@@ -5,11 +5,7 @@ class ReviewPolicy < ApplicationPolicy
     end
   end
 
-  def new?
-    create?
-  end
-
   def create?
-    !user.nil?
+    user
   end
 end

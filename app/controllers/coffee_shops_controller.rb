@@ -4,7 +4,11 @@ class CoffeeShopsController < ApplicationController
   
   def index
     @coffee_shops = policy_scope(CoffeeShop.geocoded)
-  
+
+    if params[:query].present?
+      @coffee_shops = CoffeeShop.search_by_name_address_and_description(params[:query])
+    end
+
     @markers = @coffee_shops.map do |shop|
       {
         lat: shop.latitude,
@@ -12,19 +16,6 @@ class CoffeeShopsController < ApplicationController
         infoWindow: render_to_string(partial: "info_window", locals: { shop: shop }),
         id: shop.id
       }
-    end
-
-    if params[:query].present?
-      @coffee_shops = CoffeeShop.search_by_name_address_and_description(params[:query])
-
-      @markers = @coffee_shops.map do |shop|
-        {
-          lat: shop.latitude,
-          lng: shop.longitude,
-          infoWindow: render_to_string(partial: "info_window", locals: { shop: shop }),
-          id: shop.id
-        }
-      end
     end
   end
 

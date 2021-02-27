@@ -5,6 +5,7 @@
     </div>
     <div class="index-list">
       <% if @coffee_shops.any? %>
+      
         <% @coffee_shops.last(10).each do |shop| %>
           <%= link_to coffee_shop_path(shop), style: "text-decoration: none" do %>
             <h3 data-shop-id="<%= shop.id %>"><%= shop.name %></h3>

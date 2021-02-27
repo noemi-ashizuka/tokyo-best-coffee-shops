@@ -9,16 +9,8 @@ class CoffeeShopPolicy < ApplicationPolicy
     true
   end
 
-  def edit?
-    update?
-  end
-
   def update?
     record.user == user
-  end
-
-  def new?
-    create?
   end
 
   def create?
@@ -26,7 +18,7 @@ class CoffeeShopPolicy < ApplicationPolicy
   end
 
   def destroy?
-    update?
+    record.user == user
   end
 
   def display_user_shops?
