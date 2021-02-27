@@ -5,6 +5,5 @@ class PagesController < ApplicationController
   end
 
   def api_info
-    
   end
 end
