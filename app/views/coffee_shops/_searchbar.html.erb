@@ -3,5 +3,6 @@
       params[:query],
       placeholder: "Search coffee shops"
   %>
+  <%= select_tag 'Search shop name', options_from_collection_for_select(CoffeeShop.all, :id, :name), class: 'select2', style: "background-color: red;" %>
   <%= button_tag :search, class: "button-thin" %>
 <% end %>

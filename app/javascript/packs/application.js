@@ -30,6 +30,7 @@ import "bootstrap";
 import { initMapbox } from '../plugins/init_mapbox';
 import { initAutocomplete } from '../plugins/init_autocomplete';
 import { initStarRating } from '../plugins/init_star_rating';
+import { initSelect2 } from '../plugins/init_select2';
 
 // document.addEventListener('turbolinks:load', () => {
 //   // Call your functions here, e.g:
@@ -40,4 +41,5 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initStarRating();
   initAutocomplete();
+  initSelect2();
 });
