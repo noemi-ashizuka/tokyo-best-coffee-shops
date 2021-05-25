@@ -14,7 +14,7 @@ class CoffeeShopPolicy < ApplicationPolicy
   end
 
   def create?
-    !user.nil?
+    user
   end
 
   def destroy?
