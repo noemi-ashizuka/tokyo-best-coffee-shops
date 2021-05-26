@@ -11,17 +11,28 @@ const initMapbox = () => {
     });
 
     const markers = JSON.parse(mapElement.dataset.markers);
+    
+    
     markers.forEach((marker) => {
       const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
-
       const newMarker = new mapboxgl.Marker()
-        .setLngLat([ marker.lng, marker.lat ])
-        .setPopup(popup)
-        .addTo(map);
+      .setLngLat([ marker.lng, marker.lat ])
+      .setPopup(popup)
+      .addTo(map);
       
-        newMarker.getElement().dataset.markerId = marker.id;
-        newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighligh(e));
-        newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighligh(e));
+      newMarker.getElement().dataset.markerId = marker.id;
+      newMarker.getElement().addEventListener('mouseenter', (e) => toggleCardHighligh(e));
+      newMarker.getElement().addEventListener('mouseleave', (e) => toggleCardHighligh(e));
+
+      // adding popups on hover
+      // const element = newMarker.getElement()
+      // element.id = 'marker'
+      // element.addEventListener('mouseenter', () => popup.addTo(map));
+      // element.addEventListener('mouseleave', () => popup.remove());
+
+      // newMarker.setPopup(popup)
+      // newMarker.addTo(map)
+
     });
     // padding: 70, maxZoom: 15
     const fitMapToMarkers = (map, markers) => {
@@ -31,6 +42,8 @@ const initMapbox = () => {
     };
 
     fitMapToMarkers(map, markers);
+
+    
   }
 };
 
